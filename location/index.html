@@ -15,10 +15,10 @@
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="input-group name-style">
-                    <input type="text" ng-model="location" class="form-control" placeholder="Enter your location">
-                    <input type="text" ng-model="query" class="form-control" placeholder="Enter your Query">
+                    <input type="text" ng-model="location" class="form-control" placeholder="Enter your location"> <!--Textbox for location-->
+                    <input type="text" ng-model="query" class="form-control" placeholder="Enter your Query"> <!--Textbox for Query-->
                     <div class="input-group-btn">
-                        <button ng-click="searchRestaurant()" class="btn btn-default" type="submit">
+                        <button ng-click="searchRestaurant()" class="btn btn-default" type="submit"> <!--Search button-->
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
@@ -26,10 +26,10 @@
             </div>
         </div>
     </form>
-    <div ng-repeat="x in results">
+    <div ng-repeat="x in results"> <!--Result display-->
         <label>{{x.name}}</label>
         <br>
-        <label ng-repeat="y in x.location.formattedAddress">{{y}}</label>
+        <label ng-repeat="y in x.location.formattedAddress">{{y}}</label> <!--Result of Address->
 
     </div>
 

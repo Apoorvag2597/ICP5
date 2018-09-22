@@ -15,13 +15,12 @@
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="input-group name-style col-sm-8 col-sm-offset-2">
-                    <input type="text" ng-model="translate" class="form-control" placeholder="Enter your text">
-
+                    <input type="text" ng-model="translate" class="form-control" placeholder="Enter your text"> <!--Text box for entering data-->
                 </div>
                 <p>Select a  language:</p>
 
                 <select ng-model="lang">
-                    <option ng-repeat="x in languages" value="{{x.abb}}">{{x.lang}}</option>
+                    <option ng-repeat="x in languages" value="{{x.abb}}">{{x.lang}}</option> <!-- Input Language selection-->
                 </select>
                 <!--<div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Language
@@ -35,7 +34,7 @@
                 <p>Select a  language:</p>
 
                 <select ng-model="selectedlang">
-                    <option ng-repeat="x in languages" value="{{x.abb}}">{{x.lang}}</option>
+                    <option ng-repeat="x in languages" value="{{x.abb}}">{{x.lang}}</option> <!--Output language to be displayed-->
                 </select>
 
             </div>
@@ -43,7 +42,7 @@
         <div class="col-sm-6 col-sm-offset-3">
             <div>
 <div class="translate"></div>
-                <button ng-click="translateText()" class="btn btn-default" type="submit">
+                <button ng-click="translateText()" class="btn btn-default" type="submit"> <!--translate button-->
                     <i class="glyphicon glyphicon-send"></i>
                 </button>
             </div>
@@ -53,7 +52,7 @@
             <br>
             <br>
         <div class="result">
-        <label>{{result}}</label>
+        <label>{{result}}</label> <!--Output display-->
             <br>
         </div>
     </form>
