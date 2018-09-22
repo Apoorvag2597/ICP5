@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEXT TRANSLATION</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+<body ng-app="translateText" ng-controller="translateCtrl">
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="input-group name-style">
+                    <input type="text" ng-model="translate" class="form-control" placeholder="Enter your text">
+
+                </div>
+                <!--<div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Language
+                        <span class="caret"></span></button>
+                    <ul ng-model="x" class="dropdown-menu">
+                        <option value="te">Telugu</option>
+                        <option value="kn">Kannada</li></option>
+                        <li><option value="es">Spanish</option></li>
+                    </ul>
+                </div>-->
+                <p>Select a language:</p>
+
+                <select ng-model="selectedlang">
+                    <option ng-repeat="x in languages"   value="{{x}}">{{x}}</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-sm-offset-3">
+        <div>
+            <button ng-click="translateText()" class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-send"></i>
+            </button>
+        </div>
+        </div>
+    </form>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="translate.js"> </script>
+
+</body>
+</html>
