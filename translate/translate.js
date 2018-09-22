@@ -18,10 +18,15 @@ app.controller('translateCtrl', function ($scope,$http) {
         return code;
     }*/
     $scope.languages= [
-        "te","es","kn"
+        {"lang":"Telugu","abb":"te"},
+        {"lang":"English","abb":"en"},
+        {"lang":"Kannada","abb":"kn"},
+        {"lang":"Spanish","abb":"es"},
+        {"lang":"Arabic","abb":"ar"}
     ];
     $scope.translateText = function () {
         text=$scope.translate;
+        var source = $scope.lang;
         var target=$scope.selectedlang;
         //var target=$scope.getCode(dest);
 
@@ -31,10 +36,10 @@ app.controller('translateCtrl', function ($scope,$http) {
         "key=trnsl.1.1.20151023T145251Z.bf1ca7097253ff7e."
         +
         "c0b0a88bea31ba51f72504cc0cc42cf891ed90d2&text=" + text +"&" +
-        "lang=en-" +target+ "&[format=plain]&[options=1]&[callback=set]"
+        "lang="+source+"-" +target+ "&[format=plain]&[options=1]&[callback=set]"
         }).then(function successCallback(response) {
              console.log(response);
-
+            $scope.result = response.data.text[0]
         }, function errorCallback(response) {
             console.log(response);
 
